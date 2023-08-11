@@ -4,11 +4,13 @@ import { LoginComponent } from './logins/logins.component';
 import { UnitsComponent } from './units/units.component';
 import { authGuard } from './common/shared/auth.guard';
 import { UnitDetailsComponent } from './units/unit-details/unit-details.component';
+import { SalesComponent } from './sales/sales.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent, canActivate: [authGuard] },
   { path: 'units', component: UnitsComponent, canActivate: [authGuard] },
-  { path: 'units/:id', component: UnitDetailsComponent }
+  { path: 'units/:id', component: UnitDetailsComponent },
+  { path: 'sales', component: SalesComponent }
 ];
 
 @NgModule({
