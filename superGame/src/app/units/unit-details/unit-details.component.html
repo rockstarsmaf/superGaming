@@ -1,0 +1,155 @@
+<div class="main-container">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 left-div">
+                <img [src]="unit.imageUrl">
+                <div class="view-button">
+                    <a href="#" class="btn btn-primary view-card" (click)="editCard($event)">EDIT</a>
+                </div>
+                <div class="view-button">
+                    <a href="#" class="btn btn-primary view-card" [routerLink]="['/units']">CLOSE</a>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="name">
+                    <h3>{{unit.name}}</h3>
+                </div>
+                <div>
+                    <div class="values">
+                        <h5 class="col-xs-5 col-sm-6">Description:</h5>
+                        <span>{{unit.description}}</span>
+                    </div>
+                    <div class="values">
+                        <h5 class="col-xs-5 col-sm-6">Ability Name:</h5>
+                        <span>{{unit.ability.name}}</span>
+                    </div>
+                    <div class="values">
+                        <h5 class="col-xs-5 col-sm-6">Ability Desc:</h5>
+                        <span>{{unit.ability.description}}</span>
+                    </div>
+                    <div class="values">
+                        <h5 class="col-xs-5 col-sm-6">Type:</h5>
+                        <span>{{unit.type}}</span>
+                    </div>
+                    <div class="values">
+                        <h5 class="col-xs-5 col-sm-6">Role:</h5>
+                        <span>{{unit.role}}</span>
+                    </div>
+                    <div class="values">
+                        <h5 class="col-xs-5 col-sm-6">Faction:</h5>
+                        <span>{{unit.faction}}</span>
+                    </div>
+                    <div class="values">
+                        <h5 class="col-xs-5 col-sm-6">Quality:</h5>
+                        <span>{{unit.quality}}</span>
+                    </div>
+                    <div class="values">
+                        <h5 class="col-xs-5 col-sm-6">Health:</h5>
+                        <span>{{unit.health}}</span>
+                    </div>
+                    <div class="values">
+                        <h5 class="col-xs-5 col-sm-6">Attack:</h5>
+                        <span>{{unit.attack}}</span>
+                    </div>
+                    <div class="values">
+                        <h5 class="col-xs-5 col-sm-6">Attack Type:</h5>
+                        <span>{{unit.attackType}}</span>
+                    </div>
+                    <div class="values">
+                        <h5 class="col-xs-5 col-sm-6">Attack Range Type:</h5>
+                        <span>{{unit.attackRangeType}}</span>
+                    </div>
+                    <div class="values">
+                        <h5 class="col-xs-5 col-sm-6">Attack Target Type:</h5>
+                        <span>{{unit.attackTargetType}}</span>
+                    </div>
+                    <div class="values">
+                        <h5 class="col-xs-5 col-sm-6">Max Target Count:</h5>
+                        <span>{{unit.maxTargetCount}}</span>
+                    </div>
+                    <div class="values">
+                        <h5 class="col-xs-5 col-sm-6">Movement Type:</h5>
+                        <span>{{unit.movementType}}</span>
+                    </div>
+                    <div class="values">
+                        <h5 class="col-xs-5 col-sm-6">Movement Speed Type:</h5>
+                        <span>{{unit.movementSpeedType}}</span>
+                    </div>
+                    <div class="values">
+                        <h5 class="col-xs-5 col-sm-6">Spawn Cost:</h5>
+                        <span>{{unit.spawnCost}}</span>
+                    </div>
+                    <div class="values">
+                        <h5 class="col-xs-5 col-sm-6">Spawn Cooldown:</h5>
+                        <span>{{unit.spawnCooldownInSeconds}}sec</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="myModal" class="modal" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <div>
+                    <!-- <img [src]="modalData.imageUrl"> -->
+                    <h4 class="modal-title">Edit</h4>
+                </div>
+                <button type="button" class="close" data-dismiss="modal" (click)="closeModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div>
+                    <div class="form-group">
+                        <label class="col-md-4"> Quality</label>
+                        <select class="form-control" [(ngModel)]="qualityValue">
+                            <option *ngFor="let quality of qualityArray">
+                                {{ quality }}
+                            </option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-6"> Health</label>
+                        <input class="form-control" type="number" min="5" max="10000" step="5"
+                            [(ngModel)]="healthValue">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-6"> Attack</label>
+                        <input type="range" min="5" max="500" step="5" [(ngModel)]="attackValue">
+                        <span>{{attackValue}}</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-6"> Max Target Count</label>
+                        <input type="range" min="1" max="100" [(ngModel)]="maxTargetValue">
+                        <span>{{maxTargetValue}}</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-6"> Spawn Cost</label>
+                        <input type="range" min="0" max="1000" step="5" [(ngModel)]="spawnCostValue">
+                        <span>{{spawnCostValue}}</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-6"> Spawn Cool Down(sec)</label>
+                        <input type="range" min="0" max="100" step="0.1" [(ngModel)]="spawnCoolDownValue">
+                        <span>{{spawnCoolDownValue}}</span>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-primary w-100 update" (click)="update()">
+                            UPDATE
+                        </button>
+                    </div>
+                    <div class="text-danger">{{errorMsg}}</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

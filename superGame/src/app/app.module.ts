@@ -9,11 +9,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { AuthService } from './common/services/auth.service';
 import { UnitsComponent } from './units/units.component';
 import { UnitService } from './common/services/unit.service';
+import { UnitDetailsComponent } from './units/unit-details/unit-details.component';
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    UnitsComponent
+    UnitsComponent,
+    UnitDetailsComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,79 @@
+.main-container {
+    background: black;
+    padding: 5rem;
+    min-height: 100vh;
+
+    .container {
+        padding: 2rem;
+        background-image: linear-gradient(rgba(27, 29, 35, .56), rgba(64, 69, 83, .4));
+        border-radius: 4px;
+        color: white;
+
+        img {
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+    }
+
+    .name {
+        text-align: center;
+        border: 1px solid;
+        margin-bottom: 1rem;
+    }
+
+    .values {
+        display: flex;
+        justify-content: flex-start;
+
+        span {
+            margin-left: 2rem;
+            font-size: 18px;
+        }
+    }
+
+    .view-button {
+        padding: 2rem;
+        text-align: center;
+
+        a {
+            background: black;
+            border-color: cadetblue;
+            width: 50%;
+
+        }
+    }
+
+    .left-div {
+        text-align: center;
+    }
+}
+
+
+// modal box
+.modal-dialog {
+    top: 20%;
+
+    .modal-content {
+        background: black;
+        color: white;
+    }
+
+    .modal-body {
+        .form-group {
+            margin-bottom: 1rem;
+
+            span {
+                margin-left: 2rem;
+            }
+
+            label {
+                font-weight: 500;
+            }
+        }
+    }
+
+    .update {
+        background: linear-gradient(rgba(27, 29, 35, .56), rgba(64, 69, 83, .4));
+        border-color: cadetblue;
+    }
+}

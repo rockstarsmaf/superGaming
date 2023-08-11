@@ -32,7 +32,6 @@ export class AuthService {
         this.cookie.set('refreshToken', data?.refreshToken, undefined, '');
         this.cookie.set('tokenType', data?.tokenType, undefined, '');
         this.expireTime = data?.expiresInSeconds;
-        console.log("pay", payload, data);
       },
         (errors) => {
           this.logOut();
@@ -69,7 +68,7 @@ export class AuthService {
     this.cookie.deleteAll('');
     this.isLoggedIn = false;
     sessionStorage.setItem('isLoggedIn', 'false');
-    this.router.navigate([''], { queryParams: { isLoggedOut: true } });
+    this.router.navigate(['']);
   }
 
   checkIsLoggedIn() {
