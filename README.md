@@ -2,13 +2,14 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.1.
 # Description
-1) Using the correct login details, you will be navigated to units page where all the cards available is shown.
-2) On hover on cards, card is flipped and on click of view card that particular card details is opened.
-3) In the unitDetails page, if one wants to edit any data and update the same to the api, click on edit button and a pop up is opened. User can select the data he wants to update.
-4) close unitDetailsPage and you will be redirected back to units page, click on sales button for some visualisations.
-5) In the first chart, one can select from date to to date, and click on update. The chart shown is quantity and sales between the dates.
-6) In the second chart, data of each day for the given month is shown.
-7) Use the logout button to redirect back to login page
+1) Upon successful login, you will be directed to the units page, where a comprehensive display of available cards is presented.
+2) Hovering over any card triggers a dynamic flip effect, while clicking on the "View Card" option opens up the specific card details seamlessly.
+3) Within the unitDetails page, initiating edits to any data and subsequently updating the API involves clicking the designated "Edit" button, thereby prompting a user-friendly pop-up. This interface allows users to precisely select the data they intend to modify.
+4) Upon completing your tasks on the unitDetails page, simply close it to be automatically rerouted to the units page. For those interested in gaining visual insights, the "Sales" button serves as your gateway.
+5) The primary chart features a date range selection—simply choose your desired starting and ending dates, followed by an "Update" click. This chart exhibits both quantity and sales metrics between the specified dates.
+6) The secondary chart focuses on daily data for each month, showcasing trends and patterns on a day-to-day basis.
+7) When your session concludes, the logout button awaits your command, promptly ushering you back to the login page for a smooth transition.
+8) The implementation of authGuard ensures that users are only able to navigate to specific routes if they possess the necessary authentication credentials. This security measure prevents unauthorized access to restricted areas of the application.
 
 ## Move to superGame folder
 
