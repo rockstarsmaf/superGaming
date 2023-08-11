@@ -16,7 +16,7 @@ export const authGuard: CanActivateFn = (route, state) => {
   }
   // if not logged in or no access token, redirecT to login page
   else {
-    if (url === 'units' || url === 'sales') {
+    if (url) {
       _router.navigate(['']);
     }
     else {

@@ -9,8 +9,8 @@ import { SalesComponent } from './sales/sales.component';
 const routes: Routes = [
   { path: '', component: LoginComponent, canActivate: [authGuard] },
   { path: 'units', component: UnitsComponent, canActivate: [authGuard] },
-  { path: 'units/:id', component: UnitDetailsComponent },
-  { path: 'sales', component: SalesComponent }
+  { path: 'units/:id', component: UnitDetailsComponent, canActivate: [authGuard] },
+  { path: 'sales', component: SalesComponent, canActivate: [authGuard] }
 ];
 
 @NgModule({
