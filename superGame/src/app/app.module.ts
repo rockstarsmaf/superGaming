@@ -11,6 +11,7 @@ import { UnitsComponent } from './units/units.component';
 import { UnitService } from './common/services/unit.service';
 import { UnitDetailsComponent } from './units/unit-details/unit-details.component';
 import { SalesComponent } from './sales/sales.component';
+import { NgxUiLoaderModule, NgxUiLoaderHttpModule } from 'ngx-ui-loader';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +26,11 @@ import { SalesComponent } from './sales/sales.component';
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
-    RouterModule
+    RouterModule,
+    NgxUiLoaderModule,
+    NgxUiLoaderHttpModule.forRoot({
+      showForeground: true
+    })
   ],
   providers: [AuthService, UnitService],
   bootstrap: [AppComponent]
