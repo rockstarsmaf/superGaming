@@ -1,0 +1,174 @@
+.main-container {
+    background-color: black;
+    color: white;
+    padding: 2rem;
+
+    .header {
+        padding: 1rem;
+        display: flex;
+        justify-content: space-between;
+
+        img {
+            border-radius: 50%;
+            height: 50px;
+            margin-right: 1rem;
+            padding-bottom: 11px;
+        }
+
+        h4 {
+            display: inline-block;
+        }
+
+        .log-out {
+            margin: 0 1rem
+        }
+    }
+
+    .sub-container {
+        background-image: linear-gradient(rgba(27, 29, 35, .56), rgba(64, 69, 83, .4));
+
+        .filter {
+            padding: 3rem;
+
+            .filter-container {
+                justify-content: space-between;
+
+                .form-group {
+                    @media only screen and (max-width: 768px) {
+                        margin: 1rem 0;
+                    }
+                }
+            }
+        }
+    }
+
+    .card {
+        background-color: currentColor;
+        height: 100%;
+
+        .card-body {
+            color: aliceblue;
+        }
+    }
+
+
+    .filter-buttons {
+        @media only screen and (min-width: 768px) {
+            text-align: center;
+        }
+
+        .filter-button {
+            width: auto;
+            margin-right: 2rem;
+            background: black;
+            border-color: cadetblue;
+
+            @media only screen and (max-width: 992px) {
+                margin-top: 2rem;
+                width: 28% !important;
+            }
+
+            @media only screen and (max-width: 767px) {
+                margin: 0 !important;
+                // width: 28% !important;
+                width: 80% !important;
+            }
+        }
+    }
+
+    .view-button {
+        padding: 20px;
+
+        a {
+            background: black;
+            border-color: cadetblue;
+        }
+
+        .view-card {
+            width: 100%;
+        }
+    }
+}
+
+// flip cards
+
+.container {
+    transform-style: preserve-3d;
+
+    .box {
+        position: relative;
+        width: 250px;
+        height: 400px;
+        margin: 20px;
+        transform-style: preserve-3d;
+        perspective: 1000px;
+        cursor: pointer;
+
+        &:hover {
+            .body {
+                transform: rotateY(180deg);
+            }
+        }
+
+        .body {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            transition: 0.9s ease;
+
+            .imgContainer {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                transform-style: preserve-3d;
+
+                img {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+
+            .content {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: #333;
+                backface-visibility: hidden;
+                transform-style: preserve-3d;
+                transform: rotateY(180deg);
+
+                div {
+                    h3 {
+                        letter-spacing: 1px;
+                    }
+                }
+
+                .form-control {
+                    width: 80%;
+                }
+            }
+        }
+    }
+
+    .popup-content {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 1rem;
+        padding: 0 2rem;
+
+        div {
+            font-weight: 800;
+        }
+    }
+}

@@ -1,0 +1,90 @@
+<div class="main-container">
+    <div class="header">
+        <h3>Cards Available</h3>
+        <div>
+            <button class="btn btn-primary button-color log-out" (click)="salesVis()">SALES</button>
+            <button class="btn btn-primary button-color log-out" (click)="auth.logOut()">LogOut</button>
+        </div>
+    </div>
+    <div class="sub-container">
+        <div class="filter">
+            <h4>Choose filters</h4>
+            <div class="row mb-4 filter-container">
+                <div class="col-sm-6 col-md-4 col-lg-3 form-group">
+                    <select class="form-control" [(ngModel)]="typeValue" (change)="filterUpdated()">
+                        <option *ngFor="let type of typeArray">{{type}}</option>
+                    </select>
+                </div>
+                <div class="col-sm-6 col-md-4 col-lg-3 form-group">
+                    <select class="form-control" [(ngModel)]="qualityValue" (change)="filterUpdated()">
+                        <option *ngFor="let type of qualityArray">{{type}}</option>
+                    </select>
+                </div>
+                <div class="col-sm-6 col-md-4 col-lg-3 form-group">
+                    <select class="form-control" [(ngModel)]="factionValue" (change)="filterUpdated()">
+                        <option *ngFor="let type of factionArray">{{type}}</option>
+                    </select>
+                </div>
+                <div class="filter-buttons col-sm-6 col-md-12 col-lg-3 form-group">
+                    <button type="submit" class="btn btn-primary form-control filter-button" (click)="resetFilters()">
+                        Reset
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="container d-flex align-items-center justify-content-center flex-wrap">
+            <div class="box" *ngFor="let unit of filterData; let i = index">
+                <div class="body">
+                    <div class="card">
+                        <img [src]="unit.imageUrl" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">{{unit.name}}</h5>
+                            <h6>Ability: {{unit.ability.name}}</h6>
+                            <p class="card-text">{{unit.ability.description}}</p>
+                        </div>
+                    </div>
+                    <div class="content d-flex flex-column">
+                        <div class="header">
+                            <img [src]="unit.imageUrl">
+                            <h4 class="modal-title">{{unit.name}}</h4>
+                        </div>
+                        <div class="unit-details">
+                            <div class="popup-content">
+                                <div class="name">id:</div>
+                                <div class="value">{{unit.id}}</div>
+                            </div>
+                            <div class="popup-content">
+                                <div class="name">Type:</div>
+                                <div class="value">{{unit.type}}</div>
+                            </div>
+                            <div class="popup-content">
+                                <div class="name">Role:</div>
+                                <div class="value">{{unit.role}}</div>
+                            </div>
+                            <div class="popup-content">
+                                <div class="name">Faction:</div>
+                                <div class="value">{{unit.faction}}</div>
+                            </div>
+                            <div class="popup-content">
+                                <div class="name">Quality:</div>
+                                <div class="value">{{unit.quality}}</div>
+                            </div>
+                            <div class="popup-content">
+                                <div class="name">Health:</div>
+                                <div class="value">{{unit.health}}</div>
+                            </div>
+                            <div class="popup-content">
+                                <div class="name">Attack:</div>
+                                <div class="value">{{unit.attack}}</div>
+                            </div>
+                        </div>
+                        <div class="view-button">
+                            <a href="#" class="btn btn-primary view-card" [routerLink]="[unit.id]">View
+                                Card</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

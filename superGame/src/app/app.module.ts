@@ -7,10 +7,13 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './logins/logins.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AuthService } from './common/services/auth.service';
+import { UnitsComponent } from './units/units.component';
+import { UnitService } from './common/services/unit.service';
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    UnitsComponent
   ],
   imports: [
     BrowserModule,
@@ -20,7 +23,7 @@ import { AuthService } from './common/services/auth.service';
     HttpClientModule,
     RouterModule
   ],
-  providers: [AuthService],
+  providers: [AuthService, UnitService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
