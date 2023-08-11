@@ -1,0 +1,8 @@
+/* You can add global styles to this file, and also import other style files */
+@import url(../node_modules/bootstrap/dist/css/bootstrap.min.css);
+
+.button-color {
+    background-image: linear-gradient(rgba(27, 29, 35, .56), rgba(64, 69, 83, .4)) !important;
+    background: black !important;
+    border-color: cadetblue !important;
+}

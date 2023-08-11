@@ -1,0 +1,39 @@
+<div class="main-container">
+    <div class="heading">
+        <h2>Welcome to Super Gaming</h2>
+    </div>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-12 col-lg-10">
+                <div class="wrap d-md-flex">
+                    <div class="img" style="background-image: url(../../assets/img/supergaming.png);"></div>
+                    <div class="login-wrap p-4 p-md-5">
+                        <div class="d-flex">
+                            <div class="w-100">
+                                <h3 class="mb-4">Sign In</h3>
+                            </div>
+                        </div>
+                        <form [formGroup]="loginForm">
+                            <div class="form-group mb-3">
+                                <label for="username">Username</label>
+                                <input type="text" class="form-control" formControlName="username"
+                                    placeholder="Username">
+                            </div>
+                            <div class="form-group mb-3">
+                                <label for="password">Password</label>
+                                <input type="password" class="form-control" formControlName="password"
+                                    placeholder="Password">
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary form-control" (click)="Next()">
+                                    SUBMIT
+                                </button>
+                            </div>
+                        </form>
+                        <div class="text-danger mt-4 text-center">{{auth.errorMsg}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
